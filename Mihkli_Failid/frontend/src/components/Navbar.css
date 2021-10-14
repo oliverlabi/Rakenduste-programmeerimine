@@ -1,0 +1,19 @@
+.navbar {
+    background-color: darkred;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart {
+    height: 50px;
+    margin: 50px;
+}
+
+.categories {
+    cursor: pointer;
+    border: none;
+    background-color: gray;
+    height: 50px;
+    margin: 50px;
+}
