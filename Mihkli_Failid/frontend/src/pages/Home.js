@@ -26,12 +26,11 @@ function Home(){
     return (
         <div>
             <h1>Esileht</h1>
+            <p><h2>Esemete vaade</h2></p>
+            <ItemList items={loadedItems} />
+            <br/>
             <Link to="add-item">
                 <button>Lisa uus ese</button>
-            </Link>
-            <ItemList items={loadedItems} />
-            <Link to="add-category">
-                <button>Lisa uus kategooria</button>
             </Link>
         </div>
     )

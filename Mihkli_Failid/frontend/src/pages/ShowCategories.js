@@ -1,5 +1,6 @@
 import CategoryList from "../components/CategoryList";
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function ShowCategories(){
     const [isLoading, setIsLoading] = useState(true);
@@ -21,8 +22,13 @@ function ShowCategories(){
 
     return (
         <div>
-            <h1>Kategooriate vaade</h1>
+            <p><h2>Kategooriate vaade</h2></p>
+            <p>Kategooriad:</p>
             <CategoryList categories={loadedCategories} />
+            <br/>
+            <Link to="add-category">
+                <button>Lisa uus kategooria</button>
+            </Link>
         </div>
     )
 }

@@ -5,10 +5,11 @@ function Navbar(){
     return(
         <div className="navbar">
             <Link to="/">
-                <img className="logo" src="rakendus.png" alt="rakenduse logo"/>
+                <img className="logo" src="logo.jpg" alt="rakenduse logo"/>
             </Link>
+            <p className="elementBetween"></p>
             <Link to="category-list">
-                <button className="categories">Vaata kategooriaid</button>
+                <button className="navbar-buttons">Kategooriad</button>
             </Link>
             <Link to="cart">
                 <img className="cart" src="shopping-cart.svg" alt="ostukorvi logo"/>
