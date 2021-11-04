@@ -1,5 +1,6 @@
 package oo.labi.backend.controller;
 
+import io.swagger.annotations.ApiOperation;
 import oo.labi.backend.model.Item;
 import oo.labi.backend.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ public class ItemController {
         return itemService.getItems();
     }
 
+    @ApiOperation("API otspunkt eseme muutmiseks, alati saata kaasa ID")
     @PostMapping("items")
     public String postItems(@RequestBody Item item) {
         itemService.saveItem(item);

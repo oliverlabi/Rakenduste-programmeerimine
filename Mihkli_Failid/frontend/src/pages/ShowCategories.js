@@ -22,7 +22,7 @@ function ShowCategories(){
 
     return (
         <div>
-            <p><h2>Kategooriate vaade</h2></p>
+            <h2>Kategooriate vaade</h2>
             <p>Kategooriad:</p>
             <CategoryList categories={loadedCategories} />
             <br/>

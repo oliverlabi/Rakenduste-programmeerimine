@@ -28,4 +28,12 @@ button {
   border: none;
   color: black;
   height: 30px;
+  margin-bottom: 5px;
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+  margin-top: 5px;
+}
+
+.itemName {
+  text-decoration: none;
 }

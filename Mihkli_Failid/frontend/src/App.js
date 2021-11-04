@@ -6,6 +6,9 @@ import AddItem from './pages/AddItem.js';
 import AddCategory from './pages/AddCategory.js';
 import ShowCategories from './pages/ShowCategories.js';
 import Navbar from './components/Navbar.js';
+import AdminHome from './pages/AdminHome.js';
+import SingleItem from './pages/SingleItem';
+import EditItem from './pages/EditItem';
 
 function App() {
   return (
@@ -14,16 +17,25 @@ function App() {
       <Route path='/' exact>
         <Home />
       </Route>
-      <Route path='/cart' exact>
+      <Route path='/cart'>
         <Cart />
       </Route>
-      <Route path='/add-item' exact>
+      <Route path='/admin'>
+        <AdminHome />
+      </Route>
+      <Route path='/item/:itemID'>
+        <SingleItem />
+      </Route>
+      <Route path='/edit-item/:itemID'>
+        <EditItem />
+      </Route>
+      <Route path='/add-item'>
         <AddItem />
       </Route>
-      <Route path='/add-category' exact>
+      <Route path='/add-category'>
         <AddCategory />
       </Route>
-      <Route path='/category-list' exact>
+      <Route path='/category-list'>
         <ShowCategories />
       </Route>
     </div>

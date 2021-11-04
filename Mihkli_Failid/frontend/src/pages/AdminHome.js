@@ -1,8 +1,7 @@
 import ItemList from '../components/ItemList';
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-function Home(){
+function AdminHome(){
     const [isLoading, setIsLoading] = useState(true);
     const [loadedItems, setLoadedItems] = useState([]);
 
@@ -17,7 +16,15 @@ function Home(){
         
     },[])
 
-    
+    function makeDeleteRequest(itemID){
+        fetch("http://localhost:8080/delete-item/" + itemID, 
+            { method: "DELETE" }
+        ).then(res => { //võtab kauem aega, skript liigub edasi ehk asünkroonseks. vaja laadimist
+            return res.json();
+        }).then(data => {
+            setLoadedItems(data);
+        });
+    }
 
     if (isLoading) {
         return (<div>Laeb...</div>);
@@ -25,14 +32,11 @@ function Home(){
 
     return (
         <div>
-            <p><h2>Esemete vaade</h2></p>
-            <ItemList isAddToCartButton={true} items={loadedItems} />
+            <h2>Admin vaade</h2>
+            <ItemList onDeleteItem={makeDeleteRequest} isAddToCartButton={false} items={loadedItems} />
             <br/>
-            <Link to="add-item">
-                <button>Lisa uus ese</button>
-            </Link>
         </div>
     )
 }
 
-export default Home;
+export default AdminHome;
